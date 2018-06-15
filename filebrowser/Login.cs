@@ -30,6 +30,8 @@ namespace filebrowser
 {
     public partial class Login : Form
     {
+
+        private static readonly log4net.ILog log = logHelper.GetLogger();
         public Login()
         {
             InitializeComponent();
@@ -82,9 +84,9 @@ namespace filebrowser
                 }
             this.Hide();
 
-            //ToDo Logging
+        //ToDo Logging
 #endif
-        }
+    }
 
         //Open regestration form
         private void link_Regestartion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
