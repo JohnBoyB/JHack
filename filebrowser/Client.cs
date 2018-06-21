@@ -142,7 +142,6 @@ namespace filebrowser
             {
                 if (listView1.SelectedIndices.Count != 0)
                 {
-                    //ToDo save key und iv in hashmap
                     foreach (ListViewItem item in listView1.SelectedItems)
                     {
                         symcrypt.symetrEncrypt(@"C:\crypto\decrypted\" + item.Text, @"C:\crypto\encrypted\" + item.Text);

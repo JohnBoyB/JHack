@@ -5,7 +5,7 @@ namespace filebrowser
 {
     class Dictionary
     {
-        private static readonly log4net.ILog log = LogHelper.GetLogger();
+        private static readonly log4net.ILog log = logHelper.GetLogger();
 
         public static Dictionary<string, string> keys = new Dictionary<string, string>();
 
