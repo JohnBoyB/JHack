@@ -10,6 +10,8 @@ namespace filebrowser
 {
     class directory
     {
+        private static readonly log4net.ILog log = LogHelper.GetLogger();
+
         //Method checks filesystem if folder exists. If not creat them 
         public void checkfilesystem()
         {
@@ -48,12 +50,12 @@ namespace filebrowser
                     DirectoryInfo rsa = Directory.CreateDirectory(@"C:\crypto\encrypted");
                 }
 
-                //ToDo Logging
-            }
+                log.Info("Directory successfully created");
+    }
 
             catch
             {
-                //ToDo Logging
+                log.Error("Creating directory failed");
             }
         }
     }

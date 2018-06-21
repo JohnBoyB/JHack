@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Windows.Forms;
 
+[assembly: log4net.Config.XmlConfigurator(Watch=true)]
+
 namespace filebrowser
 {
     static class Program
     {
+        
         /// <summary>
         /// Der Haupteinstiegspunkt für die Anwendung.
         /// </summary>
@@ -13,6 +16,8 @@ namespace filebrowser
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+       
+
 #if DEBUG
             Application.Run(new Client());
             //Application.Run(new Login());

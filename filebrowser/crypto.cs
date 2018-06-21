@@ -45,6 +45,7 @@ namespace filebrowser
 {
     class crypto
     {
+        private static readonly log4net.ILog log = LogHelper.GetLogger();
         // Generate a new rsa keypair
         public static void Keys(string publicKeyFileName, string privateKeyFileName)
 
@@ -103,15 +104,14 @@ namespace filebrowser
 
                 privateKeyFile.Write(privateKey);
 
-                //ToDo Logging
+                log.Info("Key pair successfully generated");
 
             }
 
             catch (Exception ex)
 
             {
-                //ToDo Logging
-                // Any errors? Show them
+                log.Error("Key pair not generated");
 
             }
 
@@ -166,9 +166,8 @@ namespace filebrowser
             catch (Exception ex)
 
             {
-                //ToDo Logging
+                log.Error("Key not encrypted");
                 return null;
-
             }
         }
         
@@ -195,9 +194,8 @@ namespace filebrowser
             catch (Exception ex)
 
             {
+                log.Error("Key not decrypted");
                 return null;
-                //ToDo Logging
-
             }
 
         }
@@ -206,6 +204,8 @@ namespace filebrowser
 
     class crypto_symmetric
     {
+        private static readonly log4net.ILog log = LogHelper.GetLogger();
+
         Dictionary keys = new Dictionary();
         md5 hash = new md5();
 
@@ -245,11 +245,11 @@ namespace filebrowser
                     keys.add(hash.buildmd5(fileOutputPath), crypto.Encrypt(RMCrypto.Key));
                 }
 
-                //ToDo Logging
+                log.Info("file encryption successful");
             }
             catch (Exception ex)
             {
-                //ToDO logging 
+                log.Error("file encryption failed");
             }
         }
 
@@ -288,18 +288,20 @@ namespace filebrowser
                     }
                 }
 
-                //ToDo Logging
+                log.Info("file decryption successful");
             }
 
             catch (Exception ex)
             {
-                //ToDo logging
+                log.Error("file decryption failed");
             }
         }
     }
 
     class md5
     {
+        private static readonly log4net.ILog log = LogHelper.GetLogger();
+
         //Build a MD5 Hash of a file and return it as string
         public string buildmd5(string filePath)
         {
@@ -317,8 +319,8 @@ namespace filebrowser
 
             catch (Exception ex)
             {
-                //ToDo Loggin
-                return null;
+                log.Error("building MD5 hash failed");
+                return null;                
             }
         }
     }

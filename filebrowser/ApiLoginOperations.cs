@@ -38,6 +38,8 @@ namespace filebrowser
 {
     class ApiLoginOperations
     {
+        private static readonly log4net.ILog log = LogHelper.GetLogger();
+
         //Base url
         private string baseUrl;
 
