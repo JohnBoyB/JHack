@@ -5,7 +5,7 @@
 * ApiLoginOperations() is the constructor of the class and save the base URL to the server
          * @param string baseUrl
 *
-* AuthenticateUser() authenticate the user how try to login with the WebAPI. The methode connect to the sserver and checks the user informations here.
+* AuthenticateUser() authenticate the user how try to login with the WebAPI. The methode connect to the server and checks the user informations here.
 * if the login name and password correct the client recives a message and a JASON Web Token.
          * @param string username
          * @param string password
