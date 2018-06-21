@@ -5,6 +5,8 @@ namespace filebrowser
 {
     class Dictionary
     {
+        private static readonly log4net.ILog log = LogHelper.GetLogger();
+
         public static Dictionary<string, string> keys = new Dictionary<string, string>();
 
         //add a value to the dictionary
@@ -27,12 +29,12 @@ namespace filebrowser
                     }
                 }
 
-                //ToDo Logging
+                log.Info("Key storage successful");
             }
 
             catch (Exception ex)
             {
-                //ToDo Logging
+                log.Error("key storage failed");
             }
         }
 
@@ -54,8 +56,8 @@ namespace filebrowser
                 }
 
                 keys.TryGetValue(hash, out key);
-            
-                //ToDo Logging
+
+                log.Info("Key successfully read");
 
                 return key;
 
@@ -64,7 +66,7 @@ namespace filebrowser
 
             catch (Exception ex)
             {
-                //ToDo Logging
+                log.Error("Read key from dictionary failed");
                 return null;
             }
 

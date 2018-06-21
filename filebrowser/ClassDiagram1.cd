@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="filebrowser.ApiLoginOperations">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAACAAAAAAAAAAAAAAACAAAQAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>ApiLoginOperations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="filebrowser.Client">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoAIAAEAACAAQAACAICBACASAAAAQQAAAQQAAKAEAAE=</HashCode>
+      <FileName>Client.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="filebrowser.crypto">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAQCAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>crypto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="filebrowser.crypto_symmetric">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAACAAAACAAAIAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>crypto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="filebrowser.md5">
+    <Position X="4" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>crypto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="filebrowser.Dictionary">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAACAAAAAAAAAAACAAAAAACAAA=</HashCode>
+      <FileName>Dictionary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="filebrowser.directory">
+    <Position X="3.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>directory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="filebrowser.Globals">
+    <Position X="4" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Globals.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="filebrowser.LogHelper">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LogHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="filebrowser.Login">
+    <Position X="0.5" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAICEAABAAAQCEoABCAAAAAAAAAAgCAAEAAAA=</HashCode>
+      <FileName>Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="filebrowser.Program">
+    <Position X="6" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="filebrowser.Regestration">
+    <Position X="7.75" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>GAAAAAAAACAAABAAAACAIABCAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Regestration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="filebrowser.User">
+    <Position X="7.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAgAACAAAAAAAA=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="filebrowser.Properties.Resources">
+    <Position X="5.5" Y="6.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAFEAAAAQAAAAAAAAAAAAAAAIg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="filebrowser.Properties.Settings">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
