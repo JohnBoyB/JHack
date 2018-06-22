@@ -24,7 +24,7 @@ namespace filebrowser
 {
     public partial class Client : Form
     {
-        private static readonly log4net.ILog log = LogHelper.GetLogger();
+        private static readonly log4net.ILog log = logHelper.GetLogger();
 
         //define crypto elements and filesystem options
         crypto crypt = new crypto();
