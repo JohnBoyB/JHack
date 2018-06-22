@@ -63,5 +63,39 @@ namespace filebrowser
                 log.Error("Registration failed");
             }
         }
+
+        private void lblUsername_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void englishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lblUsername.Text = "Username";
+            lblPassword.Text = "Password";
+            lblEmail.Text = "E-Mail";
+            butRegistration.Text = "Registration";
+        }
+
+        private void germanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lblUsername.Text = "Benutzername";
+            lblPassword.Text = "Passwort";
+            lblEmail.Text = "E-Mail";
+            butRegistration.Text = "Registrieren";
+        }
+
+        private void russianToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lblUsername.Text = "имя пользователя";
+            lblPassword.Text = "шифр"; ;
+            lblEmail.Text = "мейл";
+            butRegistration.Text = "регистра́ция";
+        }
+
+        private void txb_Password_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

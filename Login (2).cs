@@ -1,14 +1,14 @@
 ﻿/**
  * 
- * This class handles the login functions in the login form including the button click and the registration click
+ * This class handels the login functions in the login form including the button click and the regestration click
  * As a testing scenario we create a easy offline login which is called username = "1" & password = "1"
- * This login function is activated if the compile option is Debug.
+ * This login function is activated if the comile option is Debug.
  * If the compile option is Release the "easy" login will be deactivated and the secure login over the WebAPI will be activated. 
  * The "easy" login is not documented in this comments and will be deleted after the server is implemented.
  * The "easy" login begins at the #if DEBUG statment and ends at the #else statment.
  * 
  * but_Login_Click() takes username and password from the textboxes txb_username and txb_password and send this information over the WebAPI to check the credentials.
- * If the Login is correct the system checks the folder structure, creates this if it not exists, and generates a rsa keypair if the ppk and pub does not exist.
+ * If the Login is correct the sysstem check the folder structure, create this if it not exists, and generate a rsa keypair if the ppk and pub does not exist.
  * After success login the window will be closed and the client form will be showen.
          * @param string username
          * @param string password
@@ -25,14 +25,16 @@
 using System;
 using System.Windows.Forms;
 using System.IO;
+using System.Reflection;
+using System.Resources;
+using System.Globalization;
+
 
 namespace filebrowser
 {
-    public partial class Login : Form
+    public partial class FormLogin : Form
     {
-        private static readonly log4net.ILog log = logHelper.GetLogger();
-
-        public Login()
+        public FormLogin()
         {
             InitializeComponent();
         }
@@ -49,7 +51,7 @@ namespace filebrowser
             //if debug mode you can login with username 1 and password 1
 #if DEBUG
             // creating an easy login for testing solong no webAPI exists
-            Login login = new Login("1", "1");
+            FormLogin login = new FormLogin("1", "1");
             //check if eligible to be logged in 
             if (login.IsLoggedIn(username, password))
             {
@@ -63,7 +65,7 @@ namespace filebrowser
 
             }
 
-            //if release mode use AuthO with JASON API to connect to the server and recieve a jwt token
+            //if release mode use AuthO with JASON API to connect to the server and recive a jwt token
 #else
 
             ApiLoginOperations ops = new ApiLoginOperations();
@@ -84,27 +86,28 @@ namespace filebrowser
                 }
             this.Hide();
 
-            log.Info("asymKeys generated");
+            //ToDo Logging
 #endif
         }
 
-        //Open registration form
-        private void link_Regestartion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        //Open regestration form
+        private void link_Registartion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Regestration reg = new Regestration();
             reg.Show();
             this.Hide();
+            //ToDo Logging
         }
 
         //Login Methods and decarations for offline or debug mode
         //you can use this login methods if you have a application without an online authentication 
 #if DEBUG
-        //declare properties 
+        //decalre properties 
         public string Username { get; set; }
         public string Userpassword { get; set; }
 
         //intialise  
-        public Login(string user, string pass)
+        public FormLogin(string user, string pass)
         {
             this.Username = user;
             this.Userpassword = pass;
@@ -154,26 +157,33 @@ namespace filebrowser
 
         private void englishToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            lblUsername.Text = "Username";
-            lblPassword.Text = "Password";
-            butLogin.Text = "Login";
-            butRegistration.Text = "Registration";
-        }
 
-        private void germanToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            lblUsername.Text = "Benutzername";
-            lblPassword.Text = "Passwort";
-            butLogin.Text = "Login";
-            butRegistration.Text = "Registrierung";
+           
+
+            lblUsername.Text = "Username";  
+            lblPassword.Text = "Password";
+            linkRegestartion.Text = "Registration"; 
+            butLogin.Text = "Login"; 
+            
         }
 
         private void russianToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            lblUsername.Text = "имя пользователя";
-            lblPassword.Text = "шифр";
-            butLogin.Text = "Войти";
-            butRegistration.Text = "регистра́ция";
+           
+
+            lblUsername.Text = "имя пользователя";   
+            lblPassword.Text = "шифр"; 
+            linkRegestartion.Text = "регистра́ция"; 
+            butLogin.Text = "логи́н"; 
+        }
+
+        private void deutschToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            lblUsername.Text = "Benutzername"; 
+            lblPassword.Text = "Passwort";
+            linkRegestartion.Text = "Registrieren"; 
+            butLogin.Text = "Einloggen";
         }
 #endif
     }
