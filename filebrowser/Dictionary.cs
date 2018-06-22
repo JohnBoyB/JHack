@@ -32,7 +32,7 @@ namespace filebrowser
                 log.Info("Key storage successful");
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 log.Error("key storage failed");
             }
@@ -64,7 +64,7 @@ namespace filebrowser
             }
 
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 log.Error("Read key from dictionary failed");
                 return null;

@@ -1,14 +1,14 @@
 ﻿/**
  * 
- * This class handels the login functions in the login form including the button click and the regestration click
+ * This class handles the login functions in the login form including the button click and the registration click
  * As a testing scenario we create a easy offline login which is called username = "1" & password = "1"
- * This login function is activated if the comile option is Debug.
+ * This login function is activated if the compile option is Debug.
  * If the compile option is Release the "easy" login will be deactivated and the secure login over the WebAPI will be activated. 
  * The "easy" login is not documented in this comments and will be deleted after the server is implemented.
  * The "easy" login begins at the #if DEBUG statment and ends at the #else statment.
  * 
  * but_Login_Click() takes username and password from the textboxes txb_username and txb_password and send this information over the WebAPI to check the credentials.
- * If the Login is correct the sysstem check the folder structure, create this if it not exists, and generate a rsa keypair if the ppk and pub does not exist.
+ * If the Login is correct the system checks the folder structure, creates this if it not exists, and generates a rsa keypair if the ppk and pub does not exist.
  * After success login the window will be closed and the client form will be showen.
          * @param string username
          * @param string password
@@ -30,6 +30,8 @@ namespace filebrowser
 {
     public partial class Login : Form
     {
+        private static readonly log4net.ILog log = LogHelper.GetLogger();
+
         public Login()
         {
             InitializeComponent();
@@ -61,7 +63,7 @@ namespace filebrowser
 
             }
 
-            //if release mode use AuthO with JASON API to connect to the server and recive a jwt token
+            //if release mode use AuthO with JASON API to connect to the server and recieve a jwt token
 #else
 
             ApiLoginOperations ops = new ApiLoginOperations();
@@ -82,23 +84,22 @@ namespace filebrowser
                 }
             this.Hide();
 
-            //ToDo Logging
+            log.Info("asymKeys generated");
 #endif
         }
 
-        //Open regestration form
+        //Open registration form
         private void link_Regestartion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Regestration reg = new Regestration();
             reg.Show();
             this.Hide();
-            //ToDo Logging
         }
 
         //Login Methods and decarations for offline or debug mode
         //you can use this login methods if you have a application without an online authentication 
 #if DEBUG
-        //decalre properties 
+        //declare properties 
         public string Username { get; set; }
         public string Userpassword { get; set; }
 

@@ -1,12 +1,12 @@
 ﻿/**
  * 
- * This class send regestartion details like username, password & email to WebAPI 
+ * This class send registartion details username, password & email to WebAPI 
  * 
  * Regestration() constructor
  * 
- * but_Regestration_Click() send regestration details to the WebAPI and give an error if not every field is filed
- * If the regestration was successfully the window will be closed and the main window will be open
- * If the regestration was not successfully the user recives an error message.
+ * but_Regestration_Click() send registration details to the WebAPI and give an error if not every field is filled
+ * If the registration was successful the window will be closed and the main window will be open
+ * If the registration was not successful the user recieves an error message.
  **/
 
 using System;
@@ -16,6 +16,8 @@ namespace filebrowser
 {
     public partial class Regestration : Form
     {
+        private static readonly log4net.ILog log = LogHelper.GetLogger();
+
         public Regestration()
         {
             InitializeComponent();
@@ -36,9 +38,9 @@ namespace filebrowser
                 {
                     if (user == null)
                     {
-                        //Create more than one error message
+                        //ToDo Create more than one error message
                         MessageBox.Show("There was an error");
-                        //ToDo Logging
+                        log.Error("Registration failed");
                         return;
                     }
 
@@ -47,18 +49,18 @@ namespace filebrowser
                     Login login = new Login();
                     login.Show();
                     this.Hide();
-                    //ToDo Logging
+                    log.Info("Registration successful");
                 }
                 else
                 {
-                    MessageBox.Show("Please file all fileds", "Error");
-                    //ToDo Logging
+                    MessageBox.Show("Please fill in all fields", "Error");
+                    log.Error("Registration form was not filled in correctly");
                 }
             }
 
             catch
             {
-                //ToDo Logging
+                log.Error("Registration failed");
             }
         }
     }

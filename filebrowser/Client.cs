@@ -6,13 +6,13 @@
  *
  * PopulateTreeView() Initialize TreeView on the left side of the application
  *
- * GetDirectories() get all directorys from the main folder
+ * GetDirectories() get all directories from the main folder
  * 
  * but_treeView1_NodeMouseClick() allow to mark objects(folder, files) in the TreeView
  *
- * but_encrypt_Click() button who encrypte file and save them to the folder "encrypted" in the main folder.
+ * but_encrypt_Click() button which encrypts file and saves to the folder "encrypted" in the main folder.
  *
- * but_decrypt_Click() button who decrypt file and save them to the folder "decrypted" in the main folder.
+ * but_decrypt_Click() button which decrypts file and saves to the folder "decrypted" in the main folder.
  *
  **/
 
@@ -24,6 +24,8 @@ namespace filebrowser
 {
     public partial class Client : Form
     {
+        private static readonly log4net.ILog log = LogHelper.GetLogger();
+
         //define crypto elements and filesystem options
         crypto crypt = new crypto();
         crypto_symmetric symcrypt = new crypto_symmetric();
@@ -52,11 +54,11 @@ namespace filebrowser
                     GetDirectories(info.GetDirectories(), rootNode);
                     treeView1.Nodes.Add(rootNode);
                 }
-                //ToDO Logging
+                log.Info("Treeview initialized");
             }
             catch
             {
-                //ToDo Logging
+                log.Fatal("Initializing Treeview failed");
             }
         }
 
@@ -80,11 +82,11 @@ namespace filebrowser
                     }
                     nodeToAddTo.Nodes.Add(aNode);
                 }
-                //ToDo Logging
+                log.Info("Got all directories from main folder");
             }
             catch
             {
-                //ToDo Logging
+                log.Error("loading directories from main folder failed");
             }
         }
 
@@ -122,11 +124,10 @@ namespace filebrowser
 
                 listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
 
-                //ToDo Logging
             }
             catch
             {
-                //ToDo Logging
+                log.Error("ListViewItem failed");
             }
         }
 
@@ -154,15 +155,15 @@ namespace filebrowser
                 {
                     MessageBox.Show("No file selected", "error");
                 }
-                //ToDo Logging
+                log.Info("Encryption completed");
             }
             catch
             {
-                //ToDo Logging
+                log.Fatal("Encryption failed");
             }
         }
 
-        //encrypt files
+        //decrypt files
         private void but_decrypt_Click(object sender, EventArgs e)
         {
             try
@@ -183,11 +184,11 @@ namespace filebrowser
                     MessageBox.Show("No file selected", "error");
                 }
 
-                //ToDo Logging
+                log.Info("Decryption completed");
             }
             catch
             {
-                //ToDo Logging
+                log.Fatal("Decryption failed");
             }
         }
     }

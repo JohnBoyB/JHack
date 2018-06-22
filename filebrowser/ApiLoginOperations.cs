@@ -1,12 +1,12 @@
 ﻿/**
 *
-* This class handles all WebAPI connections to the login, regestration, get user details, store user details including JASON Web Tokens 
+* This class handles all WebAPI connections to the login, registration, get user details, store user details including JASON Web Tokens 
 * 
 * ApiLoginOperations() is the constructor of the class and save the base URL to the server
          * @param string baseUrl
 *
-* AuthenticateUser() authenticate the user how try to login with the WebAPI. The methode connect to the server and checks the user informations here.
-* if the login name and password correct the client recives a message and a JASON Web Token.
+* AuthenticateUser() authenticate the user who tries to login with the WebAPI. The method connect to the server and checks the user informations here.
+* if the login name and password is correct, the client recieves a message and a JASON Web Token.
          * @param string username
          * @param string password
          * @return user packed in a JSON DeserializeObject
@@ -23,15 +23,15 @@
          * @param  string username
          * @param  string password
          * @param  string eMail
-         * @return user if regestration was successful
-         * @return null if regestration wans't successful
+         * @return user if registration was successful
+         * @return null if registration wasn't successful
 * 
 **/
 
 using System;
 using System.Net;
 
-//external libary 
+//external library 
 using Newtonsoft.Json;
 
 namespace filebrowser
@@ -68,11 +68,10 @@ namespace filebrowser
                 string response = wc.UploadString(endpoint, method, json);
                 return JsonConvert.DeserializeObject<User>(response);
 
-                //ToDo Logging
             }
             catch (Exception)
             {
-                //ToDo Logging
+                log.Fatal("User was not found");
                 return null;
             }
         }
@@ -91,12 +90,12 @@ namespace filebrowser
                 string response = wc.DownloadString(endpoint);
                 user = JsonConvert.DeserializeObject<User>(response);
                 user.access_token = access_token;
-                //ToDo Logging
+                
                 return user;
             }
             catch (Exception)
             {
-                //ToDo Logging
+                log.Fatal("user does not exist");
                 return null;
             }
         }
@@ -119,11 +118,11 @@ namespace filebrowser
             {
                 string response = wc.UploadString(endpoint, method, json);
                 return JsonConvert.DeserializeObject<User>(response);
-                //ToDo Logging
+                
             }
             catch (Exception)
             {
-                //ToDo Logging
+                log.Error("Registration failed");
                 return null;
             }
         }

@@ -108,7 +108,7 @@ namespace filebrowser
 
             }
 
-            catch (Exception ex)
+            catch (Exception)
 
             {
                 log.Error("Key pair not generated");
@@ -163,10 +163,10 @@ namespace filebrowser
                 return encryptedKey;
             }
 
-            catch (Exception ex)
+            catch (Exception)
 
             {
-                log.Error("Key not encrypted");
+                log.Fatal("Key not encrypted");
                 return null;
             }
         }
@@ -191,10 +191,10 @@ namespace filebrowser
                 byte[]  plainBytes = provider.Decrypt(encryptedKeyByte, false);
                 return plainBytes;
             }
-            catch (Exception ex)
+            catch (Exception)
 
             {
-                log.Error("Key not decrypted");
+                log.Fatal("Key not decrypted");
                 return null;
             }
 
@@ -247,9 +247,9 @@ namespace filebrowser
 
                 log.Info("file encryption successful");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                log.Error("file encryption failed");
+                log.Fatal("file encryption failed");
             }
         }
 
@@ -291,9 +291,9 @@ namespace filebrowser
                 log.Info("file decryption successful");
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
-                log.Error("file decryption failed");
+                log.Fatal("file decryption failed");
             }
         }
     }
@@ -317,9 +317,9 @@ namespace filebrowser
                 }
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
-                log.Error("building MD5 hash failed");
+                log.Fatal("building MD5 hash failed");
                 return null;                
             }
         }

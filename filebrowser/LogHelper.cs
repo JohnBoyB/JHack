@@ -1,4 +1,13 @@
-﻿using System;
+﻿/**
+* 
+ * The class LogHelper provides the location of the logging message for the logging
+ * 
+ * GetLogger() 
+        * @param string fileName
+* 
+**/   
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
