@@ -10,7 +10,7 @@ namespace filebrowser
 {
     class directory
     {
-        private static readonly log4net.ILog log = LogHelper.GetLogger();
+        private static readonly log4net.ILog log = logHelper.GetLogger();
 
         //Method checks filesystem if folder exists. If not creat them 
         public void checkfilesystem()

@@ -45,7 +45,7 @@ namespace filebrowser
 {
     class crypto
     {
-        private static readonly log4net.ILog log = LogHelper.GetLogger();
+        private static readonly log4net.ILog log = logHelper.GetLogger();
         // Generate a new rsa keypair
         public static void Keys(string publicKeyFileName, string privateKeyFileName)
 
@@ -204,7 +204,7 @@ namespace filebrowser
 
     class crypto_symmetric
     {
-        private static readonly log4net.ILog log = LogHelper.GetLogger();
+        private static readonly log4net.ILog log = logHelper.GetLogger();
 
         Dictionary keys = new Dictionary();
         md5 hash = new md5();
@@ -300,7 +300,7 @@ namespace filebrowser
 
     class md5
     {
-        private static readonly log4net.ILog log = LogHelper.GetLogger();
+        private static readonly log4net.ILog log = logHelper.GetLogger();
 
         //Build a MD5 Hash of a file and return it as string
         public string buildmd5(string filePath)

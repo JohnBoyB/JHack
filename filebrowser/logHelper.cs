@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace filebrowser
 {
-        public class LogHelper
+    class logHelper
     {
         public static log4net.ILog GetLogger([System.Runtime.CompilerServices.CallerFilePath] string filename = "")
         {
