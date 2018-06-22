@@ -16,7 +16,7 @@ namespace filebrowser
 {
     public partial class Regestration : Form
     {
-        private static readonly log4net.ILog log = LogHelper.GetLogger();
+        private static readonly log4net.ILog log = logHelper.GetLogger();
 
         public Regestration()
         {

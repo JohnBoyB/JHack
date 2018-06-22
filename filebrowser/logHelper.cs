@@ -1,6 +1,6 @@
 ﻿/**
 * 
- * The class LogHelper provides the location of the logging message for the logging
+ * The class logHelper provides the location of the logging message for the logging
  * 
  * GetLogger() 
         * @param string fileName
