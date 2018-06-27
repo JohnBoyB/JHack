@@ -54,13 +54,16 @@ namespace filebrowser
             if (login.IsLoggedIn(username, password))
             {
                 Client Form1 = new Client();
-                Form1.Show();
+                this.Hide();
+                Form1.ShowDialog();
+                this.Close();
                 if (!File.Exists(ppk) && !File.Exists(pub))
                 {
                     crypto.Keys(System.Environment.MachineName + ".pub", System.Environment.MachineName + ".ppk");
                 }
-                this.Hide();
-
+                //this.Hide();
+                //this.Close();
+                //nextForm.ShowDialog();
             }
 
             //if release mode use AuthO with JASON API to connect to the server and recieve a jwt token
@@ -82,7 +85,8 @@ namespace filebrowser
                 {
                     crypto.Keys(System.Environment.MachineName + ".pub", System.Environment.MachineName + ".ppk");
                 }
-            this.Hide();
+            //this.Hide();
+             close();
 
             log.Info("asymKeys generated");
 #endif
@@ -92,8 +96,9 @@ namespace filebrowser
         private void link_Regestartion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Regestration reg = new Regestration();
-            reg.Show();
             this.Hide();
+            reg.ShowDialog();
+            this.Close();
         }
 
         //Login Methods and decarations for offline or debug mode

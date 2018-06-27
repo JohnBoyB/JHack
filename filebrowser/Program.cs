@@ -24,7 +24,6 @@ namespace filebrowser
 #else
             Application.Run(new Login());
 #endif
-
         }
     }
 }

@@ -45,36 +45,36 @@
             // 
             // txb_Username
             // 
-            this.txb_Username.Location = new System.Drawing.Point(247, 46);
-            this.txb_Username.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txb_Username.Location = new System.Drawing.Point(274, 41);
+            this.txb_Username.Margin = new System.Windows.Forms.Padding(4);
             this.txb_Username.Name = "txb_Username";
-            this.txb_Username.Size = new System.Drawing.Size(148, 26);
+            this.txb_Username.Size = new System.Drawing.Size(164, 26);
             this.txb_Username.TabIndex = 0;
             // 
             // txb_Password
             // 
-            this.txb_Password.Location = new System.Drawing.Point(247, 82);
-            this.txb_Password.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txb_Password.Location = new System.Drawing.Point(274, 74);
+            this.txb_Password.Margin = new System.Windows.Forms.Padding(4);
             this.txb_Password.Name = "txb_Password";
-            this.txb_Password.Size = new System.Drawing.Size(148, 26);
+            this.txb_Password.Size = new System.Drawing.Size(164, 26);
             this.txb_Password.TabIndex = 1;
             this.txb_Password.UseSystemPasswordChar = true;
             this.txb_Password.TextChanged += new System.EventHandler(this.txb_Password_TextChanged);
             // 
             // txb_EMail
             // 
-            this.txb_EMail.Location = new System.Drawing.Point(247, 118);
-            this.txb_EMail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txb_EMail.Location = new System.Drawing.Point(274, 106);
+            this.txb_EMail.Margin = new System.Windows.Forms.Padding(4);
             this.txb_EMail.Name = "txb_EMail";
-            this.txb_EMail.Size = new System.Drawing.Size(148, 26);
+            this.txb_EMail.Size = new System.Drawing.Size(164, 26);
             this.txb_EMail.TabIndex = 2;
             // 
             // butRegistration
             // 
-            this.butRegistration.Location = new System.Drawing.Point(60, 176);
-            this.butRegistration.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.butRegistration.Location = new System.Drawing.Point(67, 158);
+            this.butRegistration.Margin = new System.Windows.Forms.Padding(4);
             this.butRegistration.Name = "butRegistration";
-            this.butRegistration.Size = new System.Drawing.Size(112, 35);
+            this.butRegistration.Size = new System.Drawing.Size(124, 31);
             this.butRegistration.TabIndex = 4;
             this.butRegistration.Text = "Register";
             this.butRegistration.UseVisualStyleBackColor = true;
@@ -83,10 +83,10 @@
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(56, 49);
+            this.lblUsername.Location = new System.Drawing.Point(62, 44);
             this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(83, 20);
+            this.lblUsername.Size = new System.Drawing.Size(88, 18);
             this.lblUsername.TabIndex = 5;
             this.lblUsername.Text = "Username";
             this.lblUsername.Click += new System.EventHandler(this.lblUsername_Click);
@@ -94,31 +94,34 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(56, 89);
+            this.lblPassword.Location = new System.Drawing.Point(62, 80);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(78, 20);
+            this.lblPassword.Size = new System.Drawing.Size(88, 18);
             this.lblPassword.TabIndex = 6;
             this.lblPassword.Text = "Password";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(56, 129);
+            this.lblEmail.Location = new System.Drawing.Point(62, 116);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(53, 20);
+            this.lblEmail.Size = new System.Drawing.Size(68, 18);
             this.lblEmail.TabIndex = 7;
             this.lblEmail.Text = "E-Mail";
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.menuStrip1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.languagesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(426, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(473, 30);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -129,35 +132,37 @@
             this.germanToolStripMenuItem,
             this.russianToolStripMenuItem});
             this.languagesToolStripMenuItem.Name = "languagesToolStripMenuItem";
-            this.languagesToolStripMenuItem.Size = new System.Drawing.Size(109, 29);
+            this.languagesToolStripMenuItem.Size = new System.Drawing.Size(112, 26);
             this.languagesToolStripMenuItem.Text = "Languages";
             // 
             // englishToolStripMenuItem
             // 
             this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
-            this.englishToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.englishToolStripMenuItem.Size = new System.Drawing.Size(162, 30);
             this.englishToolStripMenuItem.Text = "English";
             this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
             // 
             // germanToolStripMenuItem
             // 
             this.germanToolStripMenuItem.Name = "germanToolStripMenuItem";
-            this.germanToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.germanToolStripMenuItem.Size = new System.Drawing.Size(162, 30);
             this.germanToolStripMenuItem.Text = "German";
             this.germanToolStripMenuItem.Click += new System.EventHandler(this.germanToolStripMenuItem_Click);
             // 
             // russianToolStripMenuItem
             // 
             this.russianToolStripMenuItem.Name = "russianToolStripMenuItem";
-            this.russianToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.russianToolStripMenuItem.Size = new System.Drawing.Size(162, 30);
             this.russianToolStripMenuItem.Text = "Russian";
             this.russianToolStripMenuItem.Click += new System.EventHandler(this.russianToolStripMenuItem_Click);
             // 
             // Regestration
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 234);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(473, 211);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsername);
@@ -166,10 +171,14 @@
             this.Controls.Add(this.txb_Password);
             this.Controls.Add(this.txb_Username);
             this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Courier New", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Regestration";
             this.Text = "Registration";
+            this.Load += new System.EventHandler(this.Regestration_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

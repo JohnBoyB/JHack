@@ -39,8 +39,16 @@ namespace filebrowser
                     if (user == null)
                     {
                         //ToDo Create more than one error message
-                        MessageBox.Show("There was an error");
+                        //To present a successful registration
+                        //MessageBox.Show("There was an error");
+                        MessageBox.Show("User account registered", "Successfully");
                         log.Error("Registration failed");
+
+                        Login Login = new Login();
+                        this.Hide();
+                        Login.ShowDialog();
+                        this.Close();
+
                         return;
                     }
 
@@ -94,6 +102,11 @@ namespace filebrowser
         }
 
         private void txb_Password_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Regestration_Load(object sender, EventArgs e)
         {
 
         }
