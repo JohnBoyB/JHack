@@ -38,7 +38,6 @@ namespace filebrowser
                 {
                     if (user == null)
                     {
-                        //ToDo Create more than one error message
                         //To present a successful registration
                         //MessageBox.Show("There was an error");
                         MessageBox.Show("User account registered", "Successfully");

@@ -169,8 +169,6 @@ namespace filebrowser
             {
                 if (listView1.SelectedIndices.Count != 0)
                 {
-                    //ToDo use maked files to decrypt 
-
                     foreach (ListViewItem item in listView1.SelectedItems)
                 {
                     symcrypt.symetrDecrypt(@"C:\crypto\encrypted\" + item.Text, @"C:\crypto\decrypted\" + item.Text);

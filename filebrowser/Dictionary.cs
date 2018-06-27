@@ -21,7 +21,6 @@ namespace filebrowser
                 var fi = new System.IO.FileInfo(@"C:\crypto\aeskeys\keys.bin");
 
                 {
-                    //ToDo file override insted of create 
                     using (var binaryFile = fi.Create())
                     {
                         binaryFormatter.Serialize(binaryFile, keys);
