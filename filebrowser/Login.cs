@@ -49,7 +49,7 @@ namespace filebrowser
             //if debug mode you can login with username 1 and password 1
 #if DEBUG
             // creating an easy login for testing solong no webAPI exists
-            Login login = new Login("1", "1");
+            Login login = new Login("jonas.becher@hs-niederrhein.de", "test123");
             //check if eligible to be logged in 
             if (login.IsLoggedIn(username, password))
             {
@@ -61,9 +61,6 @@ namespace filebrowser
                 {
                     crypto.Keys(System.Environment.MachineName + ".pub", System.Environment.MachineName + ".ppk");
                 }
-                //this.Hide();
-                //this.Close();
-                //nextForm.ShowDialog();
             }
 
             //if release mode use AuthO with JASON API to connect to the server and recieve a jwt token
