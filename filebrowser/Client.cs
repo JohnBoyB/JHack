@@ -188,5 +188,11 @@ namespace filebrowser
                 log.Fatal("Decryption failed");
             }
         }
+
+        private void Share_Click(object sender, EventArgs e)
+        {
+            Sharing Form1 = new Sharing();
+            Form1.ShowDialog();
+        }
     }
 }
