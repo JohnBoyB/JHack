@@ -43,8 +43,6 @@ namespace filebrowser
             //define local variables from the user inputs 
             string username = txb_Username.Text;
             string password = txb_Password.Text;
-            string ppk = @"c:\crypto\rsakeys\"+System.Environment.MachineName + ".ppk";
-            string pub = @"c:\crypto\rsakeys\" + System.Environment.MachineName + ".pub";
 
             //if debug mode you can login with username 1 and password 1
 #if DEBUG
@@ -57,10 +55,6 @@ namespace filebrowser
                 this.Hide();
                 Form1.ShowDialog();
                 this.Close();
-                if (!File.Exists(ppk) && !File.Exists(pub))
-                {
-                    crypto.Keys(System.Environment.MachineName + ".pub", System.Environment.MachineName + ".ppk");
-                }
             }
 
             //if release mode use AuthO with JASON API to connect to the server and recieve a jwt token
@@ -77,13 +71,9 @@ namespace filebrowser
             Globals.LoggedInUser = user;
             MessageBox.Show("Login successful");
             Client Form1 = new Client();
-            Form1.Show();
-                if (!File.Exists(ppk) && !File.Exists(pub))
-                {
-                    crypto.Keys(System.Environment.MachineName + ".pub", System.Environment.MachineName + ".ppk");
-                }
-            //this.Hide();
-             close();
+            this.Hide();
+            Form1.ShowDialog();
+            this.Close();
 
             log.Info("asymKeys generated");
 #endif

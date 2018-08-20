@@ -34,10 +34,16 @@ namespace filebrowser
         //Generate the client form, check filesystem and build main componants 
         public Client()
         {
+            string ppk = @"c:\crypto\rsakeys\" + System.Environment.MachineName + ".ppk";
+            string pub = @"c:\crypto\rsakeys\" + System.Environment.MachineName + ".pub";
             //check if folders exists if not create them 
             checkAndCreateFolder.checkfilesystem();
             InitializeComponent();
             PopulateTreeView();
+            if (!File.Exists(ppk) && !File.Exists(pub))
+            {
+                crypto.Keys(System.Environment.MachineName + ".pub", System.Environment.MachineName + ".ppk");
+            }
         }
 
         //create treeview for folder overview in main folder
